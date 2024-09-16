@@ -14,8 +14,19 @@ datasource db {
 }
 
 model User {
-  id        Int      @id @default(autoincrement())
+  id        Int       @id @default(autoincrement()) // Changed from String to Int
   name      String
-  email     String   @unique
+  email     String    @unique
+  password  String
+  products  Product[] // Relation to the Product model
+  createdAt DateTime  @default(now())
+}
+
+model Product {
+  id        Int      @id @default(autoincrement()) // Changed from String to Int
+  name      String
+  price     Float
+  userId    Int
+  user      User     @relation(fields: [userId], references: [id])
   createdAt DateTime @default(now())
 }

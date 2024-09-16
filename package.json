@@ -1,7 +1,9 @@
 {
   "dependencies": {
     "@prisma/client": "^5.19.1",
+    "bcryptjs": "^2.4.3",
     "express": "^4.21.0",
+    "jsonwebtoken": "^9.0.2",
     "prisma": "^5.19.1"
   }
 }
